@@ -1,0 +1,67 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Name Input</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+  {
+   "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+   }
+  }
+  </script>
+  <script src="config.js" type="module"></script>
+  <script src="script.js" type="module"></script>
+</head>
+
+<body>
+  <div class="container" id="inputForm" style="display: none;">
+    <button id="guestModeButton" style="width: auto; height: auto; padding: 10px 15px; margin-bottom: 10px;">Guest Mode</button>
+    <h1 style="font-size: 1em;">Player Name</h1>
+    <input type="text" id="playerName" placeholder="Name of Player"><br><br>
+
+    <h1 style="font-size: 1em;">Reason</h1>
+    <input type="text" id="reason" placeholder="Enter reason"><br><br>
+
+    <h1 style="font-size: 1em;">Length</h1>
+    <input type="text" id="length" placeholder="Enter length"><br><br>
+
+    <h1 style="font-size: 1em;">Game mode</h1>
+    <select id="gameMode">
+      <option value="PracticeAS">Practice AS</option>
+      <option value="PracticeNA">Practice NA</option>
+    </select><br><br>
+
+    <h1 style="font-size: 1em;">Ban type</h1>
+    <select id="banType">
+      <option value="Permanent">Permanent</option>
+      <option value="Temporary">Temporary</option>
+    </select><br><br>
+
+    <h1 style="font-size: 1em;">Code</h1>
+    <input type="text" id="code" placeholder="Enter Code"><br><br>
+    <p style="font-size: 0.8em; display: inline;">Note: You can Add Custom Code for your uploads, and if you want to delete your uploads just enter the custom code you created </p><br><br>
+    <h1 style="font-size: 1em;">Evidence</h1>
+    <input type="file" id="evidence" accept="video/*, image/*">
+    <p style="font-size: 0.8em; display: inline;">(Max 900MB)</p><br><br>
+
+    <div id="previewContainer" style="display: inline-block; margin-top: 10px;">
+      <img id="previewImage" src="#" alt="Image Preview" style="max-width: 100%; max-height: 240px; display: none;">
+      <video id="previewVideo" width="100%" height="240" controls style="display: none;"></video>
+      <button id="fullscreenButton" style="display: none;">Fullscreen</button>
+      <br>
+      <button id="uploadButton">Upload</button>
+    </div>
+  </div>
+
+  <div id="guestModeScreen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: black; color: white; justify-content: center; align-items: center; font-size: 2em; flex-direction: column; display: flex;">
+    <button id="upButton" style="position: absolute; top: 20px; right: 20px; width: auto; height: auto; padding: 10px 15px;">Admin</button>
+    <div id="displayArea">
+      <!-- Uploaded content will be displayed here -->
+    </div>
+  </div>
+</body>
+
+</html>
